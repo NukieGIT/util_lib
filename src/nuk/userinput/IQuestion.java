@@ -5,6 +5,6 @@ import java.util.List;
 public interface IQuestion {
     public String getQuestion();
     public List<String> getAnswers();
-    public List<String> getDefaultAnswers();
+    public String getDefaultAnswer();
     public boolean isValidAnswer(String answer);
 }

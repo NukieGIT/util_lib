@@ -1,8 +1,6 @@
 package nuk.userinput;
 
 import java.io.Closeable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleReader implements Closeable {
@@ -57,49 +55,9 @@ public class ConsoleReader implements Closeable {
         return getNextFloat();
     }
 
-    public String getNextQuestion(IQuestion question) {
-        var formattedAnswers = getFormattedAnswersWithDefault(question);
-        System.out.printf("%s (%s)", question.getQuestion(), String.join("|", formattedAnswers));
-
-        String usrRes = getNextString();
-        if (question.isValidAnswer(usrRes)) {
-            return usrRes;
-        } else {
-            System.out.println("Invalid response. Please try again.");
-            return getNextQuestion(question);
-        }
+    public QuestionGenerator getQuestionGenerator() {
+        return new QuestionGenerator(this);
     }
-
-    private List<String> getFormattedAnswersWithDefault(IQuestion question) {
-        List<String> answers = question.getAnswers();
-        List<String> defaultAnswers = question.getDefaultAnswers();
-        List<String> formattedAnswers = new ArrayList<>();
-
-        for (String answer : answers) {
-            if (defaultAnswers.contains(answer)) {
-                formattedAnswers.add(answer.toUpperCase());
-            } else {
-                formattedAnswers.add(answer.toLowerCase());
-            }
-        }
-
-        return formattedAnswers;
-    }
-
-//    public boolean getNextQuestion(String question) {
-//        System.out.printf("%s (y/n): ", question);
-//        String response = getNextString();
-//
-//        if (response.equalsIgnoreCase("y")) {
-//            return true;
-//        } else if (response.equalsIgnoreCase("n")) {
-//            return false;
-//        } else {
-//            System.out.println("Invalid response. Please enter 'y' or 'n'.");
-//            return getNextQuestion(question);
-//        }
-//    }
-
 
     @Override
     public void close() {
