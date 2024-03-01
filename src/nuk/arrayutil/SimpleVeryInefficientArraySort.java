@@ -15,6 +15,20 @@ public class SimpleVeryInefficientArraySort {
         return inputArray;
     }
 
+    /**
+     * Sorts the input array in given order
+     *
+     * @param inputArray
+     *         the array to sort
+     * @param ascending
+     *         array sorted in ascending order if true, descending order if false
+     * @param mutate
+     *         if true, the input array is sorted in place, if false, a new array is created and returned
+     * @param <T>
+     *         any subclass of Number
+     *
+     * @return the sorted array
+     */
     public static <T extends Number> T[] sort(T[] inputArray, boolean ascending, boolean mutate) {
         if (mutate) {
             return sort(inputArray, ascending);

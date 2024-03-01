@@ -8,8 +8,18 @@ import java.util.Optional;
 
 public class FileWriter {
 
-        if (!FileManager.doesDirectoryToFileExist(path)) return Optional.empty();
-        if (!FileManager.doesFileExist(path)) return Optional.empty();
+    /**
+     * Writes data to a file if it exists as well as the directory.
+     *
+     * @param data
+     *         the data to write to the file
+     * @param pathToFile
+     *         the path to the file to write to
+     * @param openOptions
+     *         options specifying how the data is written
+     *
+     * @return the path to the file if successful, otherwise an empty optional
+     */
     public static Optional<Path> writeToFile(String data, Path pathToFile, OpenOption... openOptions) {
 
         if (!FileManager.doesDirectoryToFileExist(pathToFile)) return Optional.empty();
@@ -26,9 +36,18 @@ public class FileWriter {
         }
     }
 
-    public static Optional<Path> createAndWriteToFile(String data, String pathToFile, String fileName, OpenOption... openOptions) {
-        Path path = Paths.get(pathToFile + "/" + fileName);
-        Path dir = Paths.get(pathToFile);
+    /**
+     * Creates a file and writes data to it. If the file doesn't exist, it will be created. If the directory doesn't exist, it will be recursively created as well.
+     *
+     * @param data
+     *         the data to write to the file
+     * @param pathToFile
+     *         the path to the file to write to
+     * @param openOptions
+     *         options specifying how the data is written
+     *
+     * @return the path to the file if successful, otherwise an empty optional
+     */
     public static Optional<Path> createAndWriteToFile(String data, Path pathToFile, OpenOption... openOptions) {
         Path dir = pathToFile.getParent();
 

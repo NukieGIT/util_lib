@@ -3,6 +3,19 @@ package nuk.userinput;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A class that generates questions in console and reads the user's response.
+ * <p>
+ *     A ConsoleReader instance is needed in order to use the Question Generator.
+ *     Example usage:
+ * </p>
+ * {@snippet lang=java :
+ * try (ConsoleReader consoleReader = new ConsoleReader()) {
+ *     QuestionGenerator questionGenerator = consoleReader.getQuestionGenerator();
+ *     // ...
+ * }
+ * }
+ */
 public class QuestionGenerator {
 
     private final ConsoleReader consoleReader;
@@ -11,6 +24,11 @@ public class QuestionGenerator {
         this.consoleReader = consoleReader;
     }
 
+    /**
+     * Asks the user a question with a set of possible answers.
+     * @param question the question object holding the question and possible answers
+     * @return the user's response
+     */
     public String askChoiceQuestion(IQuestion question) {
         var formattedAnswers = getFormattedAnswersWithDefault(question);
         System.out.printf("%s (%s): ", question.getQuestion(), String.join("|", formattedAnswers));
@@ -33,6 +51,12 @@ public class QuestionGenerator {
         }
     }
 
+    /**
+     * Asks the user a question with y/n answers.
+     * @param question the question to ask
+     * @return the user's response
+     * @deprecated use {@link #askChoiceQuestion(IQuestion)} instead
+     */
     @Deprecated
     public boolean askChoiceQuestion(String question) {
         System.out.printf("%s (y/n): ", question);
