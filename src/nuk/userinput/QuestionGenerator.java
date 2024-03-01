@@ -11,21 +11,30 @@ public class QuestionGenerator {
         this.consoleReader = consoleReader;
     }
 
-    public String askQuestion(IQuestion question) {
+    public String askChoiceQuestion(IQuestion question) {
         var formattedAnswers = getFormattedAnswersWithDefault(question);
-        System.out.printf("%s (%s)", question.getQuestion(), String.join("|", formattedAnswers));
+        System.out.printf("%s (%s): ", question.getQuestion(), String.join("|", formattedAnswers));
 
-        String usrRes = consoleReader.getNextString();
+        var usrRes = consoleReader.getNextLine();
+
+        if (usrRes.isEmpty()) {
+            if (question.getDefaultAnswer().isEmpty()) {
+                System.out.println("Please choose one of the options.");
+                return askChoiceQuestion(question);
+            }
+            return question.getDefaultAnswer();
+        }
+
         if (question.isValidAnswer(usrRes)) {
             return usrRes;
         } else {
             System.out.println("Invalid response. Please try again.");
-            return askQuestion(question);
+            return askChoiceQuestion(question);
         }
     }
 
     @Deprecated
-    public boolean askQuestion(String question) {
+    public boolean askChoiceQuestion(String question) {
         System.out.printf("%s (y/n): ", question);
         String response = consoleReader.getNextString();
 
@@ -35,7 +44,7 @@ public class QuestionGenerator {
             return false;
         } else {
             System.out.println("Invalid response. Please enter 'y' or 'n'.");
-            return askQuestion(question);
+            return askChoiceQuestion(question);
         }
     }
 
