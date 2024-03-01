@@ -17,12 +17,12 @@ public class FileManager {
     }
 
     public static boolean doesDirectoryToFileExist(String pathToFile) {
-        Path pathParent = Paths.get(pathToFile).getParent();
+        Path pathParent = Paths.get(pathToFile).toAbsolutePath().getParent();
         return pathParent != null && Files.isDirectory(pathParent);
     }
 
     public static boolean doesDirectoryToFileExist(Path pathToFile) {
-        Path pathParent = pathToFile.getParent();
+        Path pathParent = pathToFile.toAbsolutePath().getParent();
         return pathParent != null && Files.isDirectory(pathParent);
     }
 
