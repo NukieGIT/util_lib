@@ -5,9 +5,9 @@ import java.util.List;
 
 public class GenericQuestion implements IQuestion {
 
-    private String question;
-    private List<String> answers;
-    private String defaultAnswer;
+    private final String question;
+    private final List<String> answers;
+    private final String defaultAnswer;
 
     public GenericQuestion(String question, List<String> answers, String defaultAnswer) {
         this.question = question;

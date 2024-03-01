@@ -10,7 +10,10 @@ public class FileManager {
 
     /**
      * Checks if a file exists at the given path.
-     * @param pathToFile the path to the file
+     *
+     * @param pathToFile
+     *         the path to the file
+     *
      * @return true if the file exists, false otherwise
      */
     public static boolean doesFileExist(String pathToFile) {
@@ -20,7 +23,10 @@ public class FileManager {
 
     /**
      * Checks if a file exists at the given path.
-     * @param pathToFile the path to the file
+     *
+     * @param pathToFile
+     *         the path to the file
+     *
      * @return true if the file exists, false otherwise
      */
     public static boolean doesFileExist(Path pathToFile) {
@@ -29,7 +35,10 @@ public class FileManager {
 
     /**
      * Checks if the directory to the given file exists.
-     * @param pathToFile the path to the file
+     *
+     * @param pathToFile
+     *         the path to the file
+     *
      * @return true if the directory exists, false otherwise
      */
     public static boolean doesDirectoryToFileExist(String pathToFile) {
@@ -39,7 +48,10 @@ public class FileManager {
 
     /**
      * Checks if the directory to the given file exists.
-     * @param pathToFile the path to the file
+     *
+     * @param pathToFile
+     *         the path to the file
+     *
      * @return true if the directory exists, false otherwise
      */
     public static boolean doesDirectoryToFileExist(Path pathToFile) {
@@ -49,7 +61,10 @@ public class FileManager {
 
     /**
      * Checks if the element at the given path is a directory.
-     * @param pathToDir the path to the directory
+     *
+     * @param pathToDir
+     *         the path to the directory
+     *
      * @return true if the element is a directory, false otherwise
      */
     public static boolean doesDirectoryExist(String pathToDir) {
@@ -59,7 +74,10 @@ public class FileManager {
 
     /**
      * Checks if the element at the given path is a directory.
-     * @param pathToDir the path to the directory
+     *
+     * @param pathToDir
+     *         the path to the directory
+     *
      * @return true if the element is a directory, false otherwise
      */
     public static boolean doesDirectoryExist(Path pathToDir) {
@@ -68,8 +86,12 @@ public class FileManager {
 
     /**
      * Creates a file at the given path. If the file already exists or the directory doesn't, it will not be created.
-     * @param pathToFile path to create the file at
-     * @param fileName name of the file
+     *
+     * @param pathToFile
+     *         path to create the file at
+     * @param fileName
+     *         name of the file
+     *
      * @return optional containing the path to the file if it was created, empty otherwise
      */
     public static Optional<Path> createFile(String pathToFile, String fileName) {
@@ -90,7 +112,10 @@ public class FileManager {
 
     /**
      * Creates a file at the given path. If the file already exists or the directory doesn't, it will not be created.
-     * @param pathToFile path to create the file at
+     *
+     * @param pathToFile
+     *         path to create the file at
+     *
      * @return optional containing the path to the file if it was created, empty otherwise
      */
     public static Optional<Path> createFile(Path pathToFile) {
@@ -109,8 +134,12 @@ public class FileManager {
 
     /**
      * Deletes a file at the given path.
-     * @param pathToFile path to the file
-     * @param fileName name of the file
+     *
+     * @param pathToFile
+     *         path to the file
+     * @param fileName
+     *         name of the file
+     *
      * @return true if the file was deleted, false otherwise
      */
     public static boolean deleteFile(String pathToFile, String fileName) {
@@ -126,7 +155,10 @@ public class FileManager {
 
     /**
      * Deletes a file at the given path.
-     * @param pathToFile path to the file
+     *
+     * @param pathToFile
+     *         path to the file
+     *
      * @return true if the file was deleted, false otherwise
      */
     public static boolean deleteFile(Path pathToFile) {
@@ -140,7 +172,10 @@ public class FileManager {
 
     /**
      * Creates a directory with the given path. If the directory already exists, it will not be created as well as return false.
-     * @param pathToDir directory path
+     *
+     * @param pathToDir
+     *         directory path
+     *
      * @return true if the directory was created, false otherwise
      */
     public static boolean createDirectoryRecursively(String pathToDir) {
@@ -159,7 +194,10 @@ public class FileManager {
 
     /**
      * Creates a directory with the given path. If the directory already exists, it will not be created as well as return false.
-     * @param pathToDir directory path
+     *
+     * @param pathToDir
+     *         directory path
+     *
      * @return true if the directory was created, false otherwise
      */
     public static boolean createDirectoryRecursively(Path pathToDir) {

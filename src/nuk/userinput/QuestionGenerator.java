@@ -6,15 +6,15 @@ import java.util.List;
 /**
  * A class that generates questions in console and reads the user's response.
  * <p>
- *     A ConsoleReader instance is needed in order to use the Question Generator.
- *     Example usage:
+ * A ConsoleReader instance is needed in order to use the Question Generator.
+ * Example usage:
  * </p>
- * {@snippet lang=java :
+ * {@snippet lang = java:
  * try (ConsoleReader consoleReader = new ConsoleReader()) {
  *     QuestionGenerator questionGenerator = consoleReader.getQuestionGenerator();
  *     // ...
  * }
- * }
+ *}
  */
 public class QuestionGenerator {
 
@@ -26,7 +26,10 @@ public class QuestionGenerator {
 
     /**
      * Asks the user a question with a set of possible answers.
-     * @param question the question object holding the question and possible answers
+     *
+     * @param question
+     *         the question object holding the question and possible answers
+     *
      * @return the user's response
      */
     public String askChoiceQuestion(IQuestion question) {
@@ -53,7 +56,10 @@ public class QuestionGenerator {
 
     /**
      * Asks the user a question with y/n answers.
-     * @param question the question to ask
+     *
+     * @param question
+     *         the question to ask
+     *
      * @return the user's response
      * @deprecated use {@link #askChoiceQuestion(IQuestion)} instead
      */

@@ -7,18 +7,18 @@ import java.util.Scanner;
 /**
  * A class to read user input from the console.
  * <p>
- *     This class is a wrapper around the Scanner class to provide a more user-friendly interface for reading input from the console.
- *     It implements the Closeable interface to allow for the Scanner to be closed when it is no longer needed using the try with resources statement.
+ * This class is a wrapper around the Scanner class to provide a more user-friendly interface for reading input from the console.
+ * It implements the Closeable interface to allow for the Scanner to be closed when it is no longer needed using the try with resources statement.
  * </p>
- * {@snippet lang=java :
+ * {@snippet lang = java:
  *      try (ConsoleReader consoleReader = new ConsoleReader()) {
  *          // ...
  *      }
- * }
+ *}
  */
 public class ConsoleReader implements Closeable {
 
-    private Scanner scanner;
+    private final Scanner scanner;
 
     /**
      * Create a new ConsoleReader, subsequently opening a {@link Scanner#Scanner(InputStream) scanner}.
@@ -29,6 +29,7 @@ public class ConsoleReader implements Closeable {
 
     /**
      * Get the next string from the console.
+     *
      * @return the string entered by the user
      */
     public String getNextString() {
@@ -37,7 +38,10 @@ public class ConsoleReader implements Closeable {
 
     /**
      * Get the next string from the console with a pretty label.
-     * @param label the label to display before the user input
+     *
+     * @param label
+     *         the label to display before the user input
+     *
      * @return the string entered by the user
      */
     public String getNextStringWithLabel(String label) {
@@ -47,6 +51,7 @@ public class ConsoleReader implements Closeable {
 
     /**
      * Get the next line from the console.
+     *
      * @return the line entered by the user
      */
     public String getNextLine() {
@@ -55,7 +60,10 @@ public class ConsoleReader implements Closeable {
 
     /**
      * Get the next line from the console with a pretty label.
-     * @param label the label to display before the user input
+     *
+     * @param label
+     *         the label to display before the user input
+     *
      * @return the line entered by the user
      */
     public String getNextLineWithLabel(String label) {
@@ -65,6 +73,7 @@ public class ConsoleReader implements Closeable {
 
     /**
      * Get the next integer from the console.
+     *
      * @return the integer entered by the user
      */
     public int getNextInt() {
@@ -73,7 +82,10 @@ public class ConsoleReader implements Closeable {
 
     /**
      * Get the next integer from the console with a pretty label.
-     * @param label the label to display before the user input
+     *
+     * @param label
+     *         the label to display before the user input
+     *
      * @return the integer entered by the user
      */
     public int getNextIntWithLabel(String label) {
@@ -83,6 +95,7 @@ public class ConsoleReader implements Closeable {
 
     /**
      * Get the next double from the console.
+     *
      * @return the double entered by the user
      */
     public double getNextDouble() {
@@ -91,7 +104,10 @@ public class ConsoleReader implements Closeable {
 
     /**
      * Get the next double from the console with a pretty label.
-     * @param label the label to display before the user input
+     *
+     * @param label
+     *         the label to display before the user input
+     *
      * @return the double entered by the user
      */
     public double getNextDoubleWithLabel(String label) {
@@ -101,6 +117,7 @@ public class ConsoleReader implements Closeable {
 
     /**
      * Get the next float from the console.
+     *
      * @return the float entered by the user
      */
     public float getNextFloat() {
@@ -109,7 +126,10 @@ public class ConsoleReader implements Closeable {
 
     /**
      * Get the next float from the console with a pretty label.
-     * @param label the label to display before the user input
+     *
+     * @param label
+     *         the label to display before the user input
+     *
      * @return the float entered by the user
      */
     public float getNextFloatWithLabel(String label) {
@@ -119,6 +139,7 @@ public class ConsoleReader implements Closeable {
 
     /**
      * Create and get the {@link QuestionGenerator question generator}.
+     *
      * @return the question generator
      */
     public QuestionGenerator getQuestionGenerator() {
