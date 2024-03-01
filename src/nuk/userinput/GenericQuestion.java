@@ -32,6 +32,6 @@ public class GenericQuestion implements IQuestion {
 
     @Override
     public boolean isValidAnswer(String answer) {
-        return getAnswers().stream().allMatch(a -> a.equalsIgnoreCase(answer));
+        return getAnswers().stream().anyMatch(a -> a.equalsIgnoreCase(answer));
     }
 }
