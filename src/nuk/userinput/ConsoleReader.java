@@ -23,8 +23,8 @@ public class ConsoleReader implements Closeable {
     /**
      * Create a new ConsoleReader, subsequently opening a {@link Scanner#Scanner(InputStream) scanner}.
      */
-    public ConsoleReader() {
-        scanner = new Scanner(System.in);
+    public ConsoleReader(InputStream inputStream) {
+        scanner = new Scanner(inputStream);
     }
 
     /**
