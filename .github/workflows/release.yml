@@ -20,6 +20,11 @@ jobs:
         with:
           artifacts: "./build/libs/*.jar"
           generateReleaseNotes: true
+      - name: Prepare files to move to the server
+        run: |
+          git_tag=$(git describe --tags --always --first-parent)
+          mkdir ./scp_build/"{$git_tag}"
+          mv ./build/libs/*.jar ./scp_build/"{$git_tag}"
       - name: Upload jar via scp
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -27,6 +32,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          source: "./build/libs/*.jar"
+          source: "./scp_build/**/*.jar"
           target: "/var/sftp/uploads/util_lib_build/"
-          strip_components: 2
+          strip_components: 1
