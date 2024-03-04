@@ -1,9 +1,18 @@
 plugins {
     id 'java'
+    id "com.palantir.git-version" version "3.0.0"
 }
 
 group 'com.nuk'
-version 'v0.1.0-beta.1'
+version gitVersion()
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of 21
+    }
+    withJavadocJar()
+    withSourcesJar()
+}
 
 repositories {
     mavenCentral()
