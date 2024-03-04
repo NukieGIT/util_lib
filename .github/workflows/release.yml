@@ -29,3 +29,4 @@ jobs:
           port: ${{ secrets.PORT }}
           source: "./build/libs/*.jar"
           target: "/var/sftp/uploads/util_lib_build/"
+          strip_components: 2
