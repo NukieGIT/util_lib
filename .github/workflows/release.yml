@@ -11,7 +11,7 @@ jobs:
       - name: Checkout project sources
         uses: actions/checkout@v4
       - name: Setup Gradle
-        uses: gradle/actions@v3.1.0
+        uses: gradle/actions/setup-gradle@v3.1.0
       - name: Build with gradle
         run: ./gradlew build
       - name: Create new release
