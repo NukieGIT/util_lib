@@ -1,0 +1,24 @@
+changelog:
+  exclude:
+      labels:
+        - skip-changelog
+  categories:
+    - title: Breaking Changes 🚨
+      labels:
+        - breaking-change
+    - title: New Features ✨
+      labels:
+        - new-feature
+        - enhancement
+    - title: Bug Fixes 🐛
+      labels:
+        - bug-fix
+    - title: Performance Improvements 🚀
+      labels:
+        - performance-improvement
+    - title: Dependency Bumps ⬆️
+      labels:
+        - dependency-bump
+    - title: Other
+      labels:
+        - other
