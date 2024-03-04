@@ -1,4 +1,4 @@
-package nuk.userinput;
+package com.nuk.userinput;
 
 import java.util.List;
 

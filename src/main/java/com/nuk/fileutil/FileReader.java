@@ -1,4 +1,4 @@
-package nuk.fileutil;
+package com.nuk.fileutil;
 
 import java.io.IOException;
 import java.nio.file.Files;

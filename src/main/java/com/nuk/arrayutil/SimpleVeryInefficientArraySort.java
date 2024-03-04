@@ -1,4 +1,4 @@
-package nuk.arrayutil;
+package com.nuk.arrayutil;
 
 public class SimpleVeryInefficientArraySort {
     private static <T extends Number> T[] sort(T[] inputArray, boolean ascending) {
