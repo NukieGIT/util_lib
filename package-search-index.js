@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.nuk.arrayutil"},{"l":"com.nuk.fileutil"},{"l":"com.nuk.userinput"}];updateSearchResults();
